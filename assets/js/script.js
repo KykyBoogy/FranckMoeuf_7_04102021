@@ -1775,6 +1775,7 @@ const setArray = (recipes) => {
 
 // Initialisation des tags dans les dropdown list HTML.
 const setTags = () => {
+    
     // Liste des ingrédients.
     arrayOfIngredients.forEach((ingredient, index) => {
 
@@ -2031,21 +2032,20 @@ const filterAllByText = () => {
 
         });
 
-        // On concatène les appareils, ingrédients et ustensiles.
-        arrayOfRecipesFilteredByText = new Set([].concat(recipesByAppliance, recipesByIngredients, recipesByUstensils));
+        let arrayOfRecipesFiltered = [];
+        arrayOfRecipesFiltered = new Set(arrayOfRecipesFiltered.concat(recipesByAppliance, recipesByIngredients, recipesByUstensils));
 
-        // Si le tableau est vide on retourne le message :
-        // "Aucun résultat trouvé" et on masque les recettes.
-        if(arrayOfRecipesFilteredByText.size == 0) {
+        if(arrayOfRecipesFiltered.size == 0) {
 
             $('#recipes-not-found').css('display', 'block');
             $('.recipe').hide();
 
         } else {
-            // Sinon on affiche les recettes filtrées.
-            showHideRecipesFiltered(arrayOfRecipesFilteredByText);
+            console.log("recettes filtréess");
+            showHideRecipesFiltered(arrayOfRecipesFiltered);
 
-        } 
+        }
+        console.log(arrayOfRecipesFiltered);
         // Sinon si la valeur saisie dans la Search bar
         // est inférieur ou égale à 2, qu'on a filtré avec les tags dropdown list
         // on affiche les recettes filtrées.
