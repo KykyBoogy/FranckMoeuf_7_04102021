@@ -1,0 +1,12 @@
+{
+  "name": "projet7-les-petis-plats2",
+  "version": "1.0.0",
+  "description": "Projet 7 - Développez un algorithme de recherche en JavaScript - Les petits plats est un site web recettes de cuisine.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./assets/css/sass/style.scss:./style.css",
+    "prefix": "postcss ./style.css --use autoprefixer -d ./prefixed/"
+  },
+  "author": "",
+  "license": "ISC"
+}
